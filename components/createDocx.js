@@ -15,15 +15,16 @@ const createDocx = async (inputPath, outputPath) => {
       cmdDelimiter: ['[', ']'],
       processLineBreaks: true,
       failFast: false,
+      data: {},
       additionalJsContext: {
         // all of these will be available to JS snippets in your template commands (see below)
         _1_1: '',
-        _1_2: '',
+        _1_2: 'X',
         _1_3: '',
         _1_4: '',
         _1_5: '',
         _1_OTHER: '',
-        _2: '',
+        _2: 'This is the from field',
         _2_ACC_NO: '',
         _3: '',
         _4: '',
@@ -34,15 +35,6 @@ const createDocx = async (inputPath, outputPath) => {
         _page: '1',
         _pages: '2023',
       },
-      data: {
-        // Year: '2023',
-        // Subtitle: 'Meie elu lood',
-        _1_1: '',
-        _1_2: 'X',
-        _2: 'This is the from field',
-        // '_10.2': 'Second',
-      },
-
     });
 
     fs.writeFileSync(outputPath, buffer);
